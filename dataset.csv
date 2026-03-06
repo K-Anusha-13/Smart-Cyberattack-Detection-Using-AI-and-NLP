@@ -1,0 +1,13 @@
+payload,label
+;drop table test,sqlinjection
+c / caridad s / n,Normal 
+SELECT * FROM users WHERE username='admin' --,sqlinjection
+1' OR '1'='1',sqlinjection
+SELECT * FROM emp,Normal
+SELECT COUNT(*) FROM users WHERE role='admin',sqlinjection
+SELECT COUNT(*)FROM emp WHERE dept='maths',Normal
+1)) AND 1234=(SELECT 1234 FROM PG_SLEEP(5)),sqlinjection
+1; WAITFORDELAY '0:0:5' --,sqlinjection
+SELECT name FROM students WHERE id=5,Normal
+UPDATE users SET password='hacked' WHERE username ='admin',sqlinjection
+"SELECT id,name FROM students WHERE grade='A'",Normal
